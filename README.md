@@ -1,5 +1,4 @@
 # KeepCoding DevOps-V CI/CD Práctica Final - David De la Cruz
----
 En esta práctica pondremos a prueba los conocimientos adquiridos en el módulo sobre CI/CD de el bootcamp DevOps de KeepCoding.
 
 
