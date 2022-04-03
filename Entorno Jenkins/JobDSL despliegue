@@ -1,0 +1,73 @@
+folder('ACME') {
+    description('ACME proyecto Cloud-2022')
+}
+
+folder('ACME/Development') {
+    description('Entorno de desarrollo ACME')
+}
+folder('ACME/Production') {
+    description('Entorno de producción ACME')
+}
+
+pipelineJob('ACME/Development/DEPLOY_ACME_IaaC_Terraform_AWS_GCP') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url("https://github.com/davidjapo/acme-iaac-aws-gcp-dev.git")
+                    }
+                    branches("master")
+                    scriptPath('Jobs_Jenkinsfiles/acme_iaac_dev_apply.Jenkinsfile')
+                }
+            }
+        }
+    }
+}
+
+pipelineJob('ACME/Development/DESTROY_ACME_IaaC_Terraform_AWS_GCP') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url("https://github.com/davidjapo/acme-iaac-aws-gcp-dev.git")
+                    }
+                    branches("master")
+                    scriptPath('Jobs_Jenkinsfiles/acme_iaac_dev_destroy.Jenkinsfile')
+                }
+            }
+        }
+    }
+}
+pipelineJob('ACME/Production/DEPLOY_ACME_IaaC_Terraform_AWS_GCP') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url("https://github.com/davidjapo/acme-iaac-aws-gcp-prod.git")
+                    }
+                    branches("master")
+                    scriptPath('Jobs_Jenkinsfiles/acme_iaac_prod_apply.Jenkinsfile')
+                }
+            }
+        }
+    }
+}
+
+pipelineJob('ACME/Production/DESTROY_ACME_IaaC_Terraform_AWS_GCP') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url("https://github.com/davidjapo/acme-iaac-aws-gcp-prod.git")
+                    }
+                    branches("master")
+                    scriptPath('Jobs_Jenkinsfiles/acme_iaac_prod_destroy.Jenkinsfile')
+                }
+            }
+        }
+    }
+}

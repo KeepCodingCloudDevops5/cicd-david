@@ -1,0 +1,5 @@
+curl=7.68.0-1ubuntu2.7
+gnupg=2.2.19-3ubuntu2.1
+apt-transport-https=2.0.6
+ca-certificates=20210119~20.04.2
+awscli=1.18.69-1ubuntu0.20.04.1
