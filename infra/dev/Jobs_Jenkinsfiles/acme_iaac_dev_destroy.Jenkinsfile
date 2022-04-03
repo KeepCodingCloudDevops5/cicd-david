@@ -8,6 +8,11 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('acme-aws-secret-access-key')
         GOOGLE_APPLICATION_CREDENTIALS = credentials("Google-Credentials")
     }
+    options { 
+        disableConcurrentBuilds()
+        timeout(time: 10, unit: 'MINUTES')
+        timestamps()
+    }    
     stages {
         stage('Terraform Init') {
             steps {

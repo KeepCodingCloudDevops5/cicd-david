@@ -8,6 +8,11 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('acme-aws-secret-access-key')
         GOOGLE_APPLICATION_CREDENTIALS = credentials("Google-Credentials")
     }
+    options { 
+        disableConcurrentBuilds()
+        timeout(time: 10, unit: 'MINUTES')
+        timestamps()
+    }    
     stages {
         stage('Terraform Init') {
             steps {
@@ -23,7 +28,7 @@ pipeline {
             steps {
                 timeout(time: 10, unit: 'MINUTES') {
                         input message: 'Are you sure to DEPLOY?', ok: 'Yes, deploy the Storage device.'
-                        sh 'terraform apply -var-file=$FILENAME_TFVARS_PROD'
+                            sh 'terraform apply -var-file=$FILENAME_TFVARS_PROD'
                 }
             }
         }
