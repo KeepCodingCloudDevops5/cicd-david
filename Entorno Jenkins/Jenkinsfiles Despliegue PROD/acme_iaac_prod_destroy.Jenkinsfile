@@ -30,7 +30,7 @@ pipeline {
             steps {
                 timeout(time: 10, unit: 'MINUTES') {
                         input message: 'Are you sure to destroy?', ok: 'Yes, destroy the Storage device.'
-                        sh 'terraform destroy -var-file=$FILENAME_TFVARS_PROD' 
+                        sh 'terraform destroy -var-file=$FILENAME_TFVARS_PROD --auto-approve' 
                 }
             }
         }
