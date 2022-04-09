@@ -352,9 +352,9 @@ stage('Destroy Storage device') {
   
 - Sin embargo, en el flujo de despliegue de **prod** hará falta que un administrador apruebe el despliegue:
 
-  - En este caso, en el **fichero Jenkinsfile asociado al entorno de producción**, en el **stage "Deploy Storage device" se ha configurado un step con** un timeout de 10 minutos y dentro de este timeout se ha configurado **un input message, para que se le pregunte al usuario para aprobar el despliegue correspondiente**. Una vez aprobado el despliegue de forma manual, se comenzará a desplegar la IaaC.
+  - En este caso, en el **fichero Jenkinsfile asociado al entorno de producción**, en el **stage "Deploy Storage device" se ha configurado un step con** un timeout de 10 minutos y dentro de este timeout se ha configurado **un input message, para que se le pregunte al usuario para aprobar el despliegue correspondiente**. Una vez aprobado el despliegue de forma manual (desde la UI de Jenkins), se comenzará a desplegar la IaaC, ya que se ha configurado la opción '--auto-approve' al realizar el apply de Terraform, para que Terraform no solicite escribir 'yes'
   
-  PONER CAPTURAS DE LOS PIPELINE DE JENKINS CON LA COMPROBRACIÓN DE LA APROBACION
+![alt text](../capturas/pipeline-deploy-prod.png)
 
-  <br>  
+ <br>  
   
