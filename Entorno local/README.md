@@ -1,3 +1,6 @@
+# KeepCoding DevOps-V CI/CD Práctica Final - David De la Cruz
+
+
 - Los desarrolladores de ACME han de poder hacer el despliegue desde sus máquinas para el entorno de dev:
 
   Para que se pueda llevar a cabo el despliegue del entorno de desarrollo desde las máquinas de los desarrolladores, se ha cocinado una imagen docker, permitiendo de esta forma poder ejecutar un contenedor de ésta imagen, que ya tendrá todo lo necesario para poder ejecutar comandos de Terraform y de AWS CLI, y será desde desde este contenedor, aislado de las maquinas de los desarrolladores, desde donde se va a llevar a cabo el despliegue de los recursos de almacenamiento.
